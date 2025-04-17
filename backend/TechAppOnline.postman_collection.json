@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "d6699a3f-5f98-4060-af60-393493f3d408",
+		"name": "TechAppOnline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36186967"
+	},
+	"item": [
+		{
+			"name": "brands",
+			"item": [
+				{
+					"name": "api/brands",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/brands"
+					}
+				},
+				{
+					"name": "api/brands/:id",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/brands/1"
+					}
+				},
+				{
+					"name": "api/brands/",
+					"request": {
+						"method": "POST",
+						"url": "http://localhost:3000/api/brands"
+					}
+				},
+				{
+					"name": "api/brands/:id",
+					"request": {
+						"method": "PUT",
+						"url": "http://localhost:3000/api/brands/1"
+					}
+				},
+				{
+					"name": "api/brands/:id",
+					"request": {
+						"method": "DELETE",
+						"url": "http://localhost:3000/api/brands/1"
+					}
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "api/orders",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/orders"
+					}
+				},
+				{
+					"name": "api/orders/:id",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/orders/5"
+					}
+				},
+				{
+					"name": "api/orders/",
+					"request": {
+						"method": "POST",
+						"url": "http://localhost:3000/api/orders"
+					}
+				},
+				{
+					"name": "api/orders/:id",
+					"request": {
+						"method": "PUT",
+						"url": "http://localhost:3000/api/orders/5"
+					}
+				},
+				{
+					"name": "api/orders/:id",
+					"request": {
+						"method": "DELETE",
+						"url": "http://localhost:3000/api/orders/5"
+					}
+				}
+			]
+		},
+		{
+			"name": "order-details",
+			"item": [
+				{
+					"name": "api/order-details",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/order-details"
+					}
+				},
+				{
+					"name": "api/order-details/:id",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/order-details/10"
+					}
+				},
+				{
+					"name": "api/order-details/",
+					"request": {
+						"method": "POST",
+						"url": "http://localhost:3000/api/order-details"
+					}
+				},
+				{
+					"name": "api/order-details/:id",
+					"request": {
+						"method": "PUT",
+						"url": "http://localhost:3000/api/order-details/10"
+					}
+				},
+				{
+					"name": "api/order-details/:id",
+					"request": {
+						"method": "DELETE",
+						"url": "http://localhost:3000/api/order-details/10"
+					}
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "api/products",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/products"
+					}
+				},
+				{
+					"name": "api/products/:id",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/products/1"
+					}
+				},
+				{
+					"name": "api/products/",
+					"request": {
+						"method": "POST",
+						"url": "http://localhost:3000/api/products"
+					}
+				},
+				{
+					"name": "api/products/:id",
+					"request": {
+						"method": "PUT",
+						"url": "http://localhost:3000/api/products/1"
+					}
+				},
+				{
+					"name": "api/products/:id",
+					"request": {
+						"method": "DELETE",
+						"url": "http://localhost:3000/api/products/1"
+					}
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "api/categories",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/categories"
+					}
+				},
+				{
+					"name": "api/categories/:id",
+					"request": {
+						"method": "GET",
+						"url": "{{API_PREFIX00}}/categories/1"
+					}
+				},
+				{
+					"name": "api/categories/",
+					"request": {
+						"method": "POST",
+						"url": "http://localhost:3000/api/categories"
+					}
+				},
+				{
+					"name": "api/categories/:id",
+					"request": {
+						"method": "PUT",
+						"url": "http://localhost:3000/api/categories/1"
+					}
+				},
+				{
+					"name": "api/categories/:id",
+					"request": {
+						"method": "DELETE",
+						"url": "http://localhost:3000/api/categories/1"
+					}
+				}
+			]
+		}
+	]
+}

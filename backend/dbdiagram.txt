@@ -1,0 +1,114 @@
+table users {
+  id int [pk]
+  email varchar
+  password varchar
+  name varchar
+  role int
+  avatar varchar
+  phone int 
+  created_at datetime
+  updated_at datetime
+}
+
+table categories {
+  id int [pk]
+  name varchar
+  image text
+}
+
+table brands {
+  id int [pk]
+  name varchar
+  image text
+}
+
+table Feedback {
+  id int [pk]
+  product_id int 
+  user_id int 
+  star int
+  content text
+  created_at datetime
+  updated_at datetime
+}
+
+table products {
+  id int [pk]
+  name varchar
+  image text
+  price int
+  oldprice int
+  description text
+  specification text
+  buyturn int
+  quantity int
+  brand_id int
+  category_id int
+  created_at datetime
+  updated_at datetime
+}
+table orders {
+  id int [pk]
+  user_id int
+  status int
+  note text
+  total int
+  created_at datetime
+  updated_at datetime
+}
+
+table order_details {
+  id int [pk]
+  order_id int
+  product_id int 
+  price int
+  quantity int
+  created_at datetime
+  updated_at datetime
+}
+table news {
+  id int [pk]
+  title varchar
+  image text
+  content text
+  created_at datetime
+  updated_at datetime
+}
+table new_details {
+  id int [pk]
+  product_id int
+  news_id int
+  created_at datetime
+  updated_at datetime
+}
+table banner {
+  id int [pk]
+  name text
+  image text
+  status int
+  created_at datetime
+  updated_at datetime
+}
+table banner_details {
+  id int [pk]
+  product_id int
+  banner_id int
+  created_at datetime
+  updated_at datetime
+}
+
+
+Ref:"categories"."id" < "products"."category_id"
+Ref:"brands"."id" < "products"."brand_id"
+Ref:"products"."id" < "Feedback"."product_id"
+Ref:"users"."id" < "Feedback"."user_id"
+Ref:"users"."id" < "orders"."user_id"
+Ref: "orders"."id" < "order_details"."order_id"
+Ref: "news"."id" < "new_details"."news_id"
+Ref: "products"."id" < "new_details"."product_id"
+Ref: "products"."id" < "order_details"."product_id"
+Ref: "banner"."id" < "banner_details"."banner_id"
+
+
+
+Ref: "products"."id" < "banner_details"."product_id"
