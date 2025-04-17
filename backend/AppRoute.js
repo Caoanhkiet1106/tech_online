@@ -8,6 +8,8 @@ import * as OrderController from './controllers/OrderController.js';
 import * as OrderDetailController from './controllers/OrderDetailController.js';
 import * as NewsController from './controllers/NewsController.js'
 import * as NewsDetailController from './controllers/NewsdetailController.js';
+import * as BannerController from './controllers/BannerController.js';
+import * as BannerDetailController from './controllers/BannerDetailController.js';
 import asyncHandler from './middlewares/asyncHandel.js';
 import validate from './middlewares/validate.js';
 import InsertProductRequest from './dtos/requests/product/InsertProductRequests.js';
@@ -17,6 +19,9 @@ import InsertUserRequest from './dtos/requests/users/InsertUserRequests.js';
 import InsertNewsRequest from './dtos/requests/news/InsertNewsRequests.js';
 import InsertNewsDetailRequest from './dtos/requests/news-detail/InsertNewsDetailRequest.js';
 import UpdateNewsRequest from './dtos/requests/news/UpdateNewsRequests.js';
+import InsertBannerRequest from './dtos/requests/banner/InsertBannerRequest.js';
+import InsertBannerDetailRequest from './dtos/requests/banner-detail/InsertBannerDetailRequest.js';
+
 export function AppRoute(app) {
     // User Routes
     router.post('/users',
@@ -78,8 +83,28 @@ export function AppRoute(app) {
     router.get('/news-details/:id', asyncHandler(NewsDetailController.getNewsdetailById)); // Lấy Newsdetail theo ID
     router.post('/news-details',
         validate(InsertNewsDetailRequest) // Validate dữ liệu đầu vào
-        , asyncHandler(NewsDetailController.insertNewsdetail)); // Thêm mới Newsdetail
+        ,asyncHandler(NewsDetailController.insertNewsdetail)); // Thêm mới Newsdetail
     router.put('/news-details/:id', asyncHandler(NewsDetailController.updateNewsdetail)); // Cập nhật Newsdetail theo ID
     router.delete('/news-details/:id', asyncHandler(NewsDetailController.deleteNewsdetail)); // Xóa Newsdetail theo ID
+
+    // Banner Routes
+    router.get('/banners', asyncHandler(BannerController.getBanners)); // Lấy danh sách banner
+    router.get('/banners/:id', asyncHandler(BannerController.getBannerById)); // Lấy banner theo ID
+    router.post('/banners',
+        validate(InsertBannerRequest), // Validate dữ liệu đầu vào
+        asyncHandler(BannerController.insertBanner)); // Thêm mới banner
+    router.put('/banners/:id', asyncHandler(BannerController.updateBanner)); // Cập nhật banner theo ID
+    router.delete('/banners/:id', asyncHandler(BannerController.deleteBanner)); // Xóa banner theo ID
+    // Banner Detail Routes
+    router.get('/banner-details', asyncHandler(BannerDetailController.getBannerDetails)); // Lấy danh sách banner detail
+    router.get('/banner-details/:id', asyncHandler(BannerDetailController.getBannerDetailById)); // Lấy banner detail theo ID
+    router.post('/banner-details',
+        validate(InsertBannerDetailRequest), // Validate dữ liệu đầu vào
+         asyncHandler(BannerDetailController.insertBannerDetail)); // Thêm mới banner detail
+    router.put('/banner-details/:id', asyncHandler(BannerDetailController.updateBannerDetail)); // Cập nhật banner detail theo ID
+    router.delete('/banner-details/:id', asyncHandler(BannerDetailController.deleteBannerDetail)); // Xóa banner detail theo ID
+
+    
+
     app.use('/api', router);
 }
